@@ -59,12 +59,17 @@ class Index extends React.PureComponent<indexProps, indexState> {
           btnType: "clockIn",
           timePeriod: res.info.punch_time
         })
-        setTimeout(() => {
+      } else {
           this.setState({
-            isLoading: false
+              type: 'join',
+              btnType: 'join'
           })
-        }, 1000)
       }
+      setTimeout(() => {
+        this.setState({
+          isLoading: false
+        })
+      }, 1000)
     })
   }
 

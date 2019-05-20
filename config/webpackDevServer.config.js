@@ -81,8 +81,9 @@ module.exports = function (proxy, allowedHost) {
     },
     public: allowedHost,
     proxy: {
-      '/': {
-        target: 'http://192.168.123.65:8080/'
+      '/api': {
+        target: 'http://localhost:8080',
+        pathRewrite: {'^/api' : ''},
       }
     },
     // proxyTable: {

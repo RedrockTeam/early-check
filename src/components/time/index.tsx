@@ -71,7 +71,7 @@ class Time extends React.PureComponent<timeProps, timeState> {
       <div className="time">
         <p className="time-lucky">当前幸运值为: {luckyVal}</p>
         <p className="time-effort">越努力,越幸运</p>
-        <h1 className="time-val">{h}<span>:</span>{m}</h1>
+        <h1 className="time-val">{h}<span>&nbsp;:&nbsp;</span>{m}</h1>
       </div>
     )
   }
