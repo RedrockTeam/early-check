@@ -20,7 +20,13 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>React App</title>
+  <title>早起签到</title>
+  <script>
+      const openid = document.cookie.split('=')
+      if(openid.indexOf('openid') < 0) {
+          location.href = `https://nalgd.top/api/entrance/`
+      }
+  </script>
 </head>
 <style>
   @font-face {

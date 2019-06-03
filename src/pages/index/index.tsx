@@ -77,7 +77,9 @@ class Index extends React.PureComponent<indexProps, indexState> {
     api.punch().then(res => {
       this.setState({
         conTime: res.info.conTime,
-        totalTime: res.info.totalTime
+        totalTime: res.info.totalTime,
+	btnType: "cannotClockIn",
+	type: "ok",
       })
       setTimeout(() => {
         this.changePoster()
@@ -182,8 +184,8 @@ class Index extends React.PureComponent<indexProps, indexState> {
         <footer className="Index-footer">
           {
             (btnType === "join" || type === "join") ? <Button ban={false} text="加入计划" type="disable" successClick={this.clickJoinPlan} /> :
-              btnType === "clockIn" ? <Button ban={false} text="打卡" type={btnType} timePeriod={timePeriod} /> :
-                (btnType === "cannotClockIn" && type === "ok") ? <Button ban={true} text="打卡" type={btnType} timePeriod={timePeriod} successClick={this.successClock} /> :
+              btnType === "clockIn" ? <Button ban={false} text="打卡" type={btnType} timePeriod={timePeriod} successClick={this.successClock} /> :
+                (btnType === "cannotClockIn" && type === "ok") ? <Button ban={true} text="打卡" type={btnType} timePeriod={timePeriod}/> :
                   btnType === "miss" ? <Button ban={false} text="打卡还未开启" timePeriod={timePeriod} /> : null
           }
         </footer>
